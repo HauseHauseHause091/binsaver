@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Compile binsaver.cpp
-      run: g++ src/binsaver.cpp -o binsaver
+      run: clang++ -std=c++17 -o binsaver binsaver.cpp
 
     - name: Run compiled binary
       run: ./binsaver || echo "Execution failed but continuing..."
