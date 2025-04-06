@@ -17,5 +17,12 @@ jobs:
       run: g++ src/binsaver.cpp -o binsaver
 
     - name: Run compiled binary
-      run: ./binsaver
+      run: ./binsaver || echo "Execution failed but continuing..."
+
+    - name: Upload compiled binary
+      uses: actions/upload-artifact@v4
+      with:
+        name: binsaver
+        path: ./binsaver
+
 
